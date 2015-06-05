@@ -1,3 +1,6 @@
 Rails.application.routes.draw do
-  root to:'static_pages#index'
+  scope '(:locale)' do
+    devise_for :users
+    root to:'static_pages#index'
+  end
 end
